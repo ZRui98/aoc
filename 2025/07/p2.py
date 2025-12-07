@@ -6,12 +6,12 @@ beams = defaultdict(int, {j: 1 for j in range(len(lines[0])) if lines[0][j] == '
 
 for line in lines[1:]:
     newbeams = defaultdict(int)
-    for beam in beams.keys():
-        if line[beam] == '^':
-            newbeams[beam + 1] += beams[beam]
-            newbeams[beam - 1] += beams[beam]
+    for pos in beams.keys():
+        if line[pos] == '^':
+            newbeams[pos + 1] += beams[pos]
+            newbeams[pos - 1] += beams[pos]
         else:
-            newbeams[beam] += beams[beam]
+            newbeams[pos] += beams[pos]
 
     beams = newbeams
 
