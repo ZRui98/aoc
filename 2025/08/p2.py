@@ -1,5 +1,5 @@
 import math
-import heapq
+from collections import deque
 
 file = open('input.txt', 'r')
 lines = [line.rstrip() for line in file]
@@ -39,11 +39,12 @@ def union(x, y):
         rank[yp] += rank[xp]
     return True
 
-heapq.heapify(dists)
+dists.sort()
+dists = deque(dists)
 last = None
 
 while dists and max(rank) < len(boxes):
-    _, i, j = heapq.heappop(dists)
+    _, i, j = dists.popleft()
     joined = union(i, j)
     if joined:
         last = (i, j)
