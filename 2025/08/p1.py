@@ -43,7 +43,7 @@ heapq.heapify(dists)
 
 N = 1000
 
-for x in range(len(lines)):
+for x in range(N):
     _, i, j = heapq.heappop(dists)
     union(i, j)
 
