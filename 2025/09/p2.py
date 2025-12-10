@@ -18,7 +18,7 @@ def overlaps(r1, r2):
     r2_max_x, r2_min_x = max(r2[0][1], r2[1][1]), min(r2[0][1], r2[1][1])
     r1_max_y, r1_min_y = max(r1[0][0], r1[1][0]), min(r1[0][0], r1[1][0])
     r2_max_y, r2_min_y = max(r2[0][0], r2[1][0]), min(r2[0][0], r2[1][0])
-    overlaps =  (
+    overlaps = (
         r1_min_x < r2_max_x and
         r1_max_x > r2_min_x and
         r1_min_y < r2_max_y and
